@@ -1,0 +1,9 @@
+﻿#ifndef PCH_H
+#define PCH_H
+#include <iostream>
+#include <thread>
+#include <string>
+#include <chrono>
+#include <fcntl.h>
+#include <io.h>
+#endif //PCH_H
