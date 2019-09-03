@@ -30,8 +30,8 @@ int main()
 	wprintf(L"------------------------------------------\n");
 
 	while (max--) {
-
-		switch (rand() % 7)
+		x = rand();
+		switch (x % 7)
 		{
 			case 0: out[i++] = 'C'; break;
 			case 1: out[i++] = 'D'; break;
@@ -42,18 +42,12 @@ int main()
 			case 6: out[i++] = 'B'; break;
 		}
 		
-		x = rand() % 3;
-		if (x == 1 && strchr(sharps, *out) != nullptr)
-			out[i++] = '#';
-		else if (x == 2 && strchr(sharps, *out) != nullptr)
-			out[i++] = 'b';
-			//output.append("♭/u266d");
+		if (x % 3 == 1 && strchr(sharps, *out) != nullptr)	out[i++] = '#';
+		else if (x == 2 && strchr(sharps, *out) != nullptr)	out[i++] = 'b';
+		//output.append("♭/u266d");
 		
-		x = rand() % (seven? 3 : 2);
-		if (x == 0)
-			out[i++] = 'M';
-		else if (x == 1)
-			out[i++] = 'm';
+		if (x %= (seven ? 3 : 2), x == 0) out[i++] = 'M';
+		else if (x == 1) out[i++] = 'm';
 
 		out[i++] = x == 2 ? '7' : rand() % 2 == 0 && seven ? '7' : 0;
 		wprintf(L"%ls\n\n", out);
