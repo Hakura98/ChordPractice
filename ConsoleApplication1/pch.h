@@ -6,4 +6,6 @@
 #include <chrono>
 #include <fcntl.h>
 #include <io.h>
+#include <locale.h>
+#include <Windows.h>
 #endif //PCH_H
