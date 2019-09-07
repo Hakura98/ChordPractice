@@ -11,7 +11,7 @@ typedef unsigned int ui;
 
 int main()
 {
-	_setmode(_fileno(stdout), _O_U16TEXT);
+	//_setmode(_fileno(stdout), _O_U16TEXT);
 	CONSOLE_FONT_INFOEX cfi;
 	cfi.cbSize = sizeof(CONSOLE_FONT_INFOEX);
 	cfi.dwFontSize.X = 0;
@@ -33,7 +33,7 @@ int main()
 	srand(seed);
 	
 	wprintf(L"%s", L"Here we go!\n");
-	for (int i = 3; i >= 1; i--) wprintf(L"%d\n", i), sleep(1);
+	for (int i = 3; i >= 1; i--) wprintf(L"%d\n", i), sleep(1000);
 	wprintf(L"------------------------------------------\n");
 
 	while (max--) {
